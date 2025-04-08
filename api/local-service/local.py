@@ -2,6 +2,7 @@ import os
 import json
 import subprocess
 import socketio # type: ignore
+import webbrowser # type: ignore
 from aiohttp import web # type: ignore
 
 sio = socketio.AsyncServer(async_mode='aiohttp')
@@ -29,6 +30,18 @@ async def launch(sid,data):
         except subprocess.CalledProcessError as e:
             print(f'Failed to launch app: {app}, error: {e}')
             await sio.emit("launchfailure", {"app": app, "message": f"Failed to launch {app}"}, to=sid)
+
+    browsers_path = r"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    if os.path.exists(browsers_path):
+        webbrowser.register("chrome", None, webbrowser.BackgroundBrowser(browsers_path))
+        for web in websites:
+            try:
+                webbrowser.get("chrome").open(web)
+                print(f'Launched website: {web}')
+                await sio.emit("launchsuccess", {"website": web, "message": f"{web} launched successfully"}, to=sid)
+            except Exception as e:
+                print(f'Failed to launch website: {web}, error: {e}')
+                await sio.emit("launchfailure", {"website": web, "message": f"Failed to launch {web}"}, to=sid)
 
 @sio.event
 async def disconnect(sid):
