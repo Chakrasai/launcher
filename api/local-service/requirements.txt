@@ -1,0 +1,3 @@
+aiohttp==3.8.5          # For creating the web server
+python-socketio==5.8.0  # For WebSocket communication
+shutilwhich==1.1.0      # For finding executables (if shutil.which is used)
