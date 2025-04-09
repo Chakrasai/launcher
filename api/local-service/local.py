@@ -1,6 +1,7 @@
 import os
 import json
 import subprocess
+import shutil
 import socketio # type: ignore
 import webbrowser # type: ignore
 from aiohttp import web # type: ignore
@@ -31,7 +32,7 @@ async def launch(sid,data):
             print(f'Failed to launch app: {app}, error: {e}')
             await sio.emit("launchfailure", {"app": app, "message": f"Failed to launch {app}"}, to=sid)
 
-    browsers_path = r"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    browsers_path = new_func()
     if os.path.exists(browsers_path):
         webbrowser.register("chrome", None, webbrowser.BackgroundBrowser(browsers_path))
         for web in websites:
@@ -42,6 +43,10 @@ async def launch(sid,data):
             except Exception as e:
                 print(f'Failed to launch website: {web}, error: {e}')
                 await sio.emit("launchfailure", {"website": web, "message": f"Failed to launch {web}"}, to=sid)
+
+def new_func():
+    chrome_path = shutil.which("chrome") or shutil.which("google-chrome")
+    return chrome_path if chrome_path else r"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
 
 @sio.event
 async def disconnect(sid):

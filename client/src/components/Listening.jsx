@@ -3,6 +3,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Mic from "./Mic";
 
+
+
 function Listening() {
   const navigate = useNavigate();
 
@@ -14,7 +16,7 @@ function Listening() {
         App Launcher
       </nav>
       <motion.div
-        className="flex flex-col items-center justify-center text-white"
+        className="flex flex-col items-center justify-center text-white bg-gray-900 min-h-screen"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -30,7 +32,7 @@ function Listening() {
           className="mt-6 px-6 py-3 bg-red-500 rounded-lg hover:bg-red-600 transition"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/landing")}
         >
           Go Back
         </motion.button>

@@ -1,49 +1,88 @@
-# Launcher Project
+# 🚀 Launcher
 
-This project is a personal initiative to streamline the process of opening multiple applications required for work or personal needs. The idea is to automate the process using a script that launches predefined applications with a voice command.
+## Voice-Automated Application Launcher
 
-## Project Overview
+Launcher is a productivity tool that streamlines your workflow by allowing you to open multiple applications, websites, and tools with a simple voice command.
 
-When we start our laptops and begin working, we often need to open several applications, which can be time-consuming. This project aims to simplify this process by automating it. 
+## ✨ Features
 
-### Features:
-- Voice command-based application launcher.
-- Web application built with React.js and Node.js.
-- Backend powered by Express.js.
-- Local OS operations handled using a Python script.
+- **Voice Command Recognition** - Launch applications with natural language commands
+- **Customizable Commands** - Create personalized commands for your specific workflow
+- **Web & Desktop App Support** - Open both local applications and web URLs
+- **Simple Management Interface** - Easily add, edit, and remove commands
 
-## Project Structure
+## 🛠️ Tech Stack
 
-1. **Frontend**: Built with React.js.
-2. **Backend**: Developed using Node.js and Express.js.
-3. **Local Operations**: Managed using a Python script.
+- **Frontend**: React.js, Tailwind CSS, SpeechRecognition API
+- **Backend**: Node.js, Express.js, MongoDB
+- **Local Operations**: Python for system-level interactions
 
-## How to Run
+## 🚀 Installation & Setup
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/Chakrasai/launcher
-    cd launcher
-    ```
+### Prerequisites
 
-2. Start the client:
-    ```bash
-    cd client
-    npm run dev
-    ```
+- Node.js (v14+)
+- Python 3.6+
+- MongoDB
 
-3. Start the API server:
-    ```bash
-    cd api
-    nodemon
-    ```
+### Getting Started
 
-4. Run the Python script for local operations:
-    ```bash
-    python local.py
-    ```
+1. **Clone the repository**
 
-## Repository
+```bash
+git clone https://github.com/Chakrasai/launcher.git
+cd launcher
+```
 
-Find the project repository on GitHub: [Launcher Project](https://github.com/Chakrasai/launcher)
+2. **Set up the Frontend**
 
+```bash
+cd client
+npm install
+npm run dev
+```
+
+3. **Set up the Backend**
+
+```bash
+cd api
+npm install
+nodemon
+```
+
+4. **Run the Python Script**
+
+```bash
+python local.py
+```
+
+## 📋 Usage
+
+1. Configure your commands in the dashboard
+    - Example: "Start work" → Opens Gmail, Slack, VS Code, and your project management tool
+2. Click the microphone button and speak your command
+3. Watch as Launcher automatically opens all your specified applications
+
+## 🔧 Configuration
+
+### Adding a New Command
+
+1. Navigate to the dashboard
+2. Click "Add New Command"
+3. Enter:
+    - Command phrase (what you'll say)
+    - Applications/URLs to open
+    - Optional delay between launches
+4. Save your configuration
+
+## 📅 Roadmap
+
+- [ ] Cross-platform support (Windows)
+- [ ] Mobile application for remote command management
+- [ ] Integration with smart assistants (Alexa, Google Assistant)
+
+## 📞 Contact
+
+Chakra Sai - [LinkedIn](https://linkedin.com/in/chakrasai-akuthota)
+
+Project Link: [https://github.com/Chakrasai/launcher](https://github.com/Chakrasai/launcher)

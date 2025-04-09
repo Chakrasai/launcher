@@ -1,6 +1,5 @@
 dotenv = require('dotenv').config();
 
-
 const cors = require('cors');
 const express = require('express');
 const app = express();
@@ -24,7 +23,7 @@ const user = require('./models/user')
 
 app.use(cors({ 
     credentials: true, 
-    origin: "http://localhost:5173", 
+    origin: process.env.CLIENT_ORIGIN, 
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
@@ -33,7 +32,7 @@ app.use(helmet());
 app.use(cookieParser());
 app.use(express.json());
 
-const socket = io.connect("http://localhost:5000")
+const socket = io.connect(process.env.SOCKET)
 console.log(socket.id);
 socket.on("connect",()=> console.log("Socket connected successfully"));
 socket.on("disconnect",()=> console.log("Socket disconnected successfully"));
@@ -80,6 +79,7 @@ app.post('/login',async (req,res)=>{
         console.log(err);
         return res.status(500).json({message:'Internal server error'});
     }
+
     
 })
 
