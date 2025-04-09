@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { CIcon } from "@coreui/icons-react";
 import { cilMicrophone } from "@coreui/icons";
 
-const api_url = import.meta.env.VITE_API
+// const api_url = import.meta.env.VITE_API
 
 function Landing() {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ function Landing() {
   }
   useEffect(() => {
     const fetchUser = async () => {
-      const user = await fetch(`${api_url}/user`, {
+      const user = await fetch("http://localhost:3000/user", {
         method: 'GET',
         credentials: 'include',
         headers: {

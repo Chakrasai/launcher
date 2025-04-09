@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const api_url = import.meta.env.VITE_API;
+// const api_url = import.meta.env.VITE_API;
 
 function Login() {
   const [isLogin, setIsLogin] = useState(true);
@@ -23,7 +23,7 @@ function Login() {
   async function handleLoginSubmit(ev) {
     ev.preventDefault();
     try {
-    const response = await fetch(`${api_url}/login`, {
+    const response = await fetch("http://localhost:3000/login", {
       method: 'POST',
       body: JSON.stringify({ username: formData.username, password: formData.password }),
       headers: { 'Content-Type': 'application/json' },
@@ -44,7 +44,7 @@ function Login() {
   async function handleSignupSubmit(ev) {
     ev.preventDefault();
     try {
-      const response = await fetch(`${api_url}/register`, {
+      const response = await fetch("http://localhost:3000/register", {
         method: 'POST',
         body: JSON.stringify({ username: formData.username, email: formData.email, password: formData.password }),
         headers: { 'Content-Type': 'application/json' },

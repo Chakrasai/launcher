@@ -37,7 +37,7 @@ const exec = [
     { name: "Focus To-Do", exec: "FocusToDo" }
 ];
 
-const api_url = import.meta.env.VITE_API
+// const api_url = import.meta.env.VITE_API
 
 function Enroll() {
     const {
@@ -87,7 +87,7 @@ function Enroll() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`${api_url}/enroll`, {
+            const response = await fetch("http://localhost:3000/enroll", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

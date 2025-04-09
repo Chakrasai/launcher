@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
 
-const api_url = import.meta.env.VITE_API
+// const api_url = import.meta.env.VITE_API
 
 const Mic = () => {
   const [isListening, setIsListening] = useState(false);
@@ -35,7 +35,7 @@ const Mic = () => {
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     try {
-      const response = await fetch(`${api_url}/getlaunch`, {
+      const response = await fetch("http://localhost:3000/getlaunch", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
