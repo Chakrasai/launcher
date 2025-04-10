@@ -41,6 +41,7 @@ socket.on("error",()=> console.log("Socket error"));
 socket.on("launchsuccess",(data)=> console.log("success:",data));
 socket.on("launchfailure",(data)=> console.log("error:",data));
 
+
 const verifytoken = (req,res,next)=>{
     const token = req.cookies.token;
     if(!token){
@@ -54,7 +55,6 @@ const verifytoken = (req,res,next)=>{
         next();
     })
 }
-
 
 
 app.post('/login',async (req,res)=>{

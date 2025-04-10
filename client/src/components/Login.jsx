@@ -68,19 +68,19 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-800 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-4">
       <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md space-y-6 relative overflow-hidden">
-        {/* Decorative elements */}
+        
         <div className="absolute -top-10 -right-10 w-32 h-32 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
         <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
         
-        {/* Logo/Brand */}
+        
         <div className="text-center mb-2">
           <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent">Launcher - App</h1>
           <p className="text-gray-500 text-sm mt-1">Launch Apps instantly</p>
         </div>
 
-        {/* Toggle Button */}
+        
         <div className="flex justify-center mb-6">
           <div className="bg-gray-100 p-1 rounded-xl w-full">
             <button
@@ -112,7 +112,7 @@ function Login() {
           </div>
         )}
 
-        {/* Login Form */}
+        
         {isLogin ? (
           <div className="relative z-10">
             <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Welcome Back</h2>
